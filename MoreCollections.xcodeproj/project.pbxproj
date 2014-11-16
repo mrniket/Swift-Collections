@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		DA7D8DD31A18EF6E002B5A5E /* MoreCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA7D8DD91A18EF6E002B5A5E /* MoreCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7D8DCD1A18EF6E002B5A5E /* MoreCollections.framework */; };
-		DA7D8DE01A18EF6E002B5A5E /* MoreCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DDF1A18EF6E002B5A5E /* MoreCollectionsTests.swift */; };
+		DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */; };
+		DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */; };
+		DA7D8DED1A18EF82002B5A5E /* ArrayMultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DEA1A18EF82002B5A5E /* ArrayMultiMap.swift */; };
+		DA7D8DEE1A18EF82002B5A5E /* ArrayMultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DEA1A18EF82002B5A5E /* ArrayMultiMap.swift */; };
+		DA7D8DF01A18EF8E002B5A5E /* ArrayMultiMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DEF1A18EF8E002B5A5E /* ArrayMultiMapTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,11 @@
 		DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreCollections.h; sourceTree = "<group>"; };
 		DA7D8DD81A18EF6E002B5A5E /* MoreCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoreCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D8DDE1A18EF6E002B5A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA7D8DDF1A18EF6E002B5A5E /* MoreCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionsTests.swift; sourceTree = "<group>"; };
+		DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiMap.swift; sourceTree = "<group>"; };
+		DA7D8DEA1A18EF82002B5A5E /* ArrayMultiMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayMultiMap.swift; sourceTree = "<group>"; };
+		DA7D8DEF1A18EF8E002B5A5E /* ArrayMultiMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayMultiMapTests.swift; sourceTree = "<group>"; };
+		DA7D8DF21A18F069002B5A5E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DA7D8DF31A18F0D1002B5A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 		DA7D8DC31A18EF6E002B5A5E = {
 			isa = PBXGroup;
 			children = (
+				DA7D8DF31A18F0D1002B5A5E /* README.md */,
+				DA7D8DF21A18F069002B5A5E /* LICENSE */,
 				DA7D8DCF1A18EF6E002B5A5E /* MoreCollections */,
 				DA7D8DDC1A18EF6E002B5A5E /* MoreCollectionsTests */,
 				DA7D8DCE1A18EF6E002B5A5E /* Products */,
@@ -71,6 +81,8 @@
 		DA7D8DCF1A18EF6E002B5A5E /* MoreCollections */ = {
 			isa = PBXGroup;
 			children = (
+				DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */,
+				DA7D8DEA1A18EF82002B5A5E /* ArrayMultiMap.swift */,
 				DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */,
 				DA7D8DD01A18EF6E002B5A5E /* Supporting Files */,
 			);
@@ -88,7 +100,7 @@
 		DA7D8DDC1A18EF6E002B5A5E /* MoreCollectionsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA7D8DDF1A18EF6E002B5A5E /* MoreCollectionsTests.swift */,
+				DA7D8DEF1A18EF8E002B5A5E /* ArrayMultiMapTests.swift */,
 				DA7D8DDD1A18EF6E002B5A5E /* Supporting Files */,
 			);
 			path = MoreCollectionsTests;
@@ -209,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7D8DED1A18EF82002B5A5E /* ArrayMultiMap.swift in Sources */,
+				DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA7D8DE01A18EF6E002B5A5E /* MoreCollectionsTests.swift in Sources */,
+				DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */,
+				DA7D8DF01A18EF8E002B5A5E /* ArrayMultiMapTests.swift in Sources */,
+				DA7D8DEE1A18EF82002B5A5E /* ArrayMultiMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +335,7 @@
 		DA7D8DE41A18EF6E002B5A5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +345,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DA7D8DE51A18EF6E002B5A5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
