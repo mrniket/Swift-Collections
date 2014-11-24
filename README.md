@@ -1,9 +1,20 @@
 More Collections for Swift
 =============
 
-More Collections for Swift introduces new collection types that are not currenty in Swift, but that I've found generally useful in other languages & frameworks. These collections are designed to coexist in the existing Swift framework.
+More Collections for Swift introduces a handful of useful collections that are not currenty in Swift. These collections are designed to coexist with the Swift framework.
 
-As a general rule, the API follow Swifts Array and Dictionary API while strongly influnce by [Googles' Guava collection](https://code.google.com/p/guava-libraries/wiki/GuavaExplained).   The collections are designed to be as simple as possible while still satisfying ~90% of common usecases.
+As a general rule, the API follow Swift's Array and Dictionary API while strongly influnce by [Googles' Guava collection](https://code.google.com/p/guava-libraries/wiki/GuavaExplained).   More Collections for Swift are designed to be as simple as possible while still satisfying ~90% of common usecases.
+
+## Collections
+
+### Set
+A collection that contains no duplicate elements.  More formally, sets contain no pair of elements e1 and e2 such that e1 == e2
+
+### Tree
+A collection that simulates a hierarchical tree structure, with a root value and subtrees of children, represented as a set of linked nodes.
+
+### MultiMap
+A collection that maps keys to values, similar to Map, but in which each key may be associated with multiple values.
 
 ## Version
 
@@ -17,8 +28,14 @@ All development happens on GitHub.  File a bug or pull request for new features 
 
 ## In Progress
 
-Trees
-
-## In Queue
-
 Sets
+- Equality operator
+- Convenience initializer
+
+MultiMap
+- Subscript API
+- map, reduce, filter functions
+
+Tree
+- Traversal functions
+- map, reduce, filter functions

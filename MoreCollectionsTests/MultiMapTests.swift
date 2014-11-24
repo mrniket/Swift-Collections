@@ -9,8 +9,8 @@
 import UIKit
 import XCTest
 
-class ArrayMultiMapTests: XCTestCase {
-    let multiMap = ArrayMultiMap<Int, Int>()
+class MultiMapTests: XCTestCase {
+    var multiMap = MultiMap<Int, Int>()
 
     override func setUp() {
         super.setUp()
