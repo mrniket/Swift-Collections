@@ -5,6 +5,8 @@ More Collections for Swift introduces a handful of useful collections that are n
 
 As a general rule, the API follow Swift's Array and Dictionary API while strongly influnce by [Googles' Guava collection](https://code.google.com/p/guava-libraries/wiki/GuavaExplained).   More Collections for Swift are designed to be as simple as possible while still satisfying ~90% of common usecases.
 
+[![Build Status](https://travis-ci.org/jbulat/Swift-Collections.svg?branch=master)](https://travis-ci.org/jbulat/Swift-Collections)
+
 ## Collections
 
 ### Set
