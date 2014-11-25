@@ -12,7 +12,7 @@ import Foundation
 public struct MultiMap<K : Hashable, V : Equatable> : SequenceType {
     typealias Values = [V]
     typealias Entry = (K, V)
-    var map: [K: Values] = Dictionary()
+    var map: [K: Values] = [:]
     
     public init(){}
     

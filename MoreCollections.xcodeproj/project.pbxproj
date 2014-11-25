@@ -44,6 +44,7 @@
 		DAA7FDF91A190E83002952AC /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		DABABFC31A1FF83E00D13603 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
 		DADC93451A1BB13A005F82DF /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		DAE053371A2527720051606D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		DA7D8DC31A18EF6E002B5A5E = {
 			isa = PBXGroup;
 			children = (
+				DAE053371A2527720051606D /* .travis.yml */,
 				DA7D8DF31A18F0D1002B5A5E /* README.md */,
 				DA7D8DF21A18F069002B5A5E /* LICENSE */,
 				DA7D8DCF1A18EF6E002B5A5E /* MoreCollections */,

@@ -98,7 +98,7 @@ class TreeTests: XCTestCase {
         
         XCTAssertEqual(4, tree.count)
         tree.prune(100)
-        XCTAssertEqual(4, tree.count)
+        XCTAssertEqual(4, tree.count)        
     }
 
 }

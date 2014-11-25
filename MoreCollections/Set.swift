@@ -9,7 +9,8 @@
 import Foundation
 
 // A collection that contains no duplicate elements.  More formally, sets contain no pair of elements e1 and e2 such that e1 == e2
-public struct Set<T : Hashable> : SequenceType {
+public struct Set<T : Hashable> {
+    
     let IGNORED = 0
     var map: [T: Int] = [:]
     
@@ -82,7 +83,11 @@ public struct Set<T : Hashable> : SequenceType {
         return [T](map.keys)
     }
     
-    public func generate() -> IndexingGenerator<[T]>  {
-        return IndexingGenerator(asArray())
+}
+
+// SequenceType conformance
+extension Set : SequenceType {
+    public func generate() -> GeneratorOf<T> {
+        return GeneratorOf(map.keys.generate())
     }
 }

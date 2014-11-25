@@ -39,3 +39,7 @@ MultiMap
 Tree
 - Traversal functions
 - map, reduce, filter functions
+
+Other Potential Collections
+- BiMap
+- Table

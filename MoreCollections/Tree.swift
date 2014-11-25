@@ -42,6 +42,7 @@ public struct Tree<N : Hashable>  : SequenceType {
         allNodes.remove(node)
         
         if(allNodes.isEmpty()){
+            firstNode = nil
             removeAll()
         }
     }
@@ -101,7 +102,7 @@ public struct Tree<N : Hashable>  : SequenceType {
         return self.count == 0
     }
     
-    public func generate() -> IndexingGenerator<[N]>  {
+    public func generate() -> GeneratorOf<N>  {
         return allNodes.generate()
     }
 }
