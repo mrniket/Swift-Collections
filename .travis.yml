@@ -1,6 +1,8 @@
-language: objective-c
+before_install:
+- brew update
+- brew outdated xctool || brew upgrade xctool
 osx_image: xcode61
-env:
-- BUILD_PLATFORM=iOS
-script:
-- make test
+language: objective-c
+xcode_project: MoreCollections.xcodeproj
+xcode_scheme: MoreCollectionsTests
+xcode_sdk: iphonesimulator8.1
