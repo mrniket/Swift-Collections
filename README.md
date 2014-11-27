@@ -33,6 +33,8 @@ All development happens on GitHub.  File a bug or pull request for new features 
 Sets
 - Equality operator
 - Convenience initializer
+- Operations : Union, Complement, Intersect, Difference
+- Overload operators for above operations
 
 MultiMap
 - Subscript API
