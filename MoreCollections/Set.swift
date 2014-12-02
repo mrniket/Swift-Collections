@@ -14,7 +14,12 @@ public struct Set<T : Hashable> {
     let IGNORED = 0
     var map: [T: Int] = [:]
     
-    public init(){}
+    public init<S: SequenceType where S.Generator.Element == T>(_ sequence: S) {
+        addAll(sequence)
+    }
+    
+    public init(){
+    }
     
     public var count: Int {
         return map.count
@@ -26,8 +31,8 @@ public struct Set<T : Hashable> {
         return isNew
     }
     
-    public mutating func addAll(items: [T]) {
-        for item in items {
+    public mutating func addAll<S: SequenceType where S.Generator.Element == T>(sequence: S) {
+        for item in [T](sequence) {
             add(item)
         }
     }
@@ -38,8 +43,8 @@ public struct Set<T : Hashable> {
         return exists
     }
     
-    public mutating func removeAll(items: [T]) {
-        for item in items {
+    public mutating func removeAll<S: SequenceType where S.Generator.Element == T>(sequence: S) {
+        for item in [T](sequence) {
             remove(item)
         }
     }
@@ -48,8 +53,8 @@ public struct Set<T : Hashable> {
         map.removeAll()
     }
     
-    public func containsAll(items: [T]) -> Bool {
-        for item in items {
+    public func containsAll<S: SequenceType where S.Generator.Element == T>(sequence: S) -> Bool {
+        for item in [T](sequence) {
             if(!contains(self, item)){
                 return false
             }

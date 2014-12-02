@@ -32,18 +32,21 @@ All development happens on GitHub.  File a bug or pull request for new features 
 
 Sets
 - Equality operator
-- Convenience initializer
 - Operations : Union, Complement, Intersect, Difference
 - Overload operators for above operations
+- Add performance test cases
 
 MultiMap
 - Subscript API
 - map, reduce, filter functions
+- Add performance test cases
 
 Tree
 - Traversal functions
 - map, reduce, filter functions
+- Add performance test cases
 
 Other Potential Collections
 - BiMap
 - Table
+- Stack

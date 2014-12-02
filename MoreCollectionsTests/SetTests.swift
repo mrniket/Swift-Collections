@@ -22,6 +22,16 @@ class SetTests: XCTestCase {
         XCTAssertTrue(set.isEmpty(), "Set must start as empty")
     }
     
+    func testIsInit(){
+        XCTAssertTrue(Set<Int>().isEmpty())
+        XCTAssertEqual(4, Set([1, 2, 3, 4, 4]).count)
+        XCTAssertEqual(4, Set("abcdd").count)
+        
+        let temp = Set(1...10)
+        XCTAssertEqual(10, temp.count)
+        XCTAssertTrue(contains(temp, 5))
+    }
+    
     func testIsEmpty(){
         XCTAssertEqual(0, set.count)
         XCTAssertTrue(set.isEmpty())
