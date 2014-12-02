@@ -14,6 +14,8 @@ public struct Set<T : Hashable> {
     let IGNORED = 0
     var map: [T: Int] = [:]
     
+    // Equals if set1.count == set2.count && set1.containsAll(set2)
+    
     public init<S: SequenceType where S.Generator.Element == T>(_ sequence: S) {
         addAll(sequence)
     }
@@ -95,4 +97,16 @@ extension Set : SequenceType {
     public func generate() -> GeneratorOf<T> {
         return GeneratorOf(map.keys.generate())
     }
+}
+
+// SequenceType conformance
+extension Set {
+    public func equals(other: Set<T>) -> Bool {
+        return self.count == other.count && containsAll(other)
+    }
+}
+
+// equality
+func ==<T>(lhs: Set<T>, rhs: Set<T>) -> Bool {
+    return lhs.equals(rhs)
 }

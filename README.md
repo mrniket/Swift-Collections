@@ -31,7 +31,6 @@ All development happens on GitHub.  File a bug or pull request for new features 
 ## In Progress
 
 Sets
-- Equality operator
 - Operations : Union, Complement, Intersect, Difference
 - Overload operators for above operations
 - Add performance test cases

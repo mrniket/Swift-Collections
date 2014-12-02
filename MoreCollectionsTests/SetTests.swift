@@ -142,5 +142,41 @@ class SetTests: XCTestCase {
         XCTAssertEqual([1], set.asArray())
     }
     
+    func testEquals(){
+        var other = Set<Int>()
+        XCTAssertTrue(set.equals(other))
+        set.add(1)
+        XCTAssertFalse(set.equals(other))
+        other.add(1)
+        XCTAssertTrue(set.equals(other))
+        other.add(1)
+        XCTAssertTrue(set.equals(other))
+        other.add(2)
+        XCTAssertFalse(set.equals(other))
+        
+        // ensure order is not a factor
+        set.addAll([3,4,2])
+        other.addAll([4,3])
+        XCTAssertTrue(set.equals(other))
+    }
+    
+    func testEqualsOperator(){
+        var other = Set<Int>()
+        XCTAssertTrue(set == other)
+        set.add(1)
+        XCTAssertFalse(set == other)
+        other.add(1)
+        XCTAssertTrue(set == other)
+        other.add(1)
+        XCTAssertTrue(set == other)
+        other.add(2)
+        XCTAssertFalse(set == other)
+        
+        // ensure order is not a factor
+        set.addAll([3,4,2])
+        other.addAll([4,3])
+        XCTAssertTrue(set == other)
+    }
+    
 
 }
