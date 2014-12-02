@@ -12,7 +12,7 @@ import Foundation
 public struct Set<T : Hashable> {
     
     let IGNORED = 0
-    var map: [T: Int] = [:]
+    var dictionary: [T: Int] = [:]
     
     // Equals if set1.count == set2.count && set1.containsAll(set2)
     
@@ -24,12 +24,12 @@ public struct Set<T : Hashable> {
     }
     
     public var count: Int {
-        return map.count
+        return dictionary.count
     }
     
     public mutating func add(item: T) -> Bool {
         let isNew = !contains(self, item)
-        map[item] = IGNORED
+        dictionary[item] = IGNORED
         return isNew
     }
     
@@ -41,7 +41,7 @@ public struct Set<T : Hashable> {
     
     public mutating func remove(item: T) -> Bool {
         let exists = contains(self, item)
-        map[item] = nil
+        dictionary[item] = nil
         return exists
     }
     
@@ -52,7 +52,7 @@ public struct Set<T : Hashable> {
     }
     
     public mutating func removeAll() {
-        map.removeAll()
+        dictionary.removeAll()
     }
     
     public func containsAll<S: SequenceType where S.Generator.Element == T>(sequence: S) -> Bool {
@@ -65,29 +65,23 @@ public struct Set<T : Hashable> {
     }
     
     public func isEmpty() -> Bool {
-        return map.isEmpty
+        return dictionary.isEmpty
     }
     
     public func filter(includeElement: (T) -> Bool) -> Set<T> {
-        let result = asArray().filter(includeElement)
-        var set = Set<T>()
-        set.addAll(result)
-        return set
+        return Set<T>(dictionary.keys.filter(includeElement))
     }
     
     public func map<U>(transform: (T) -> U) -> Set<U> {
-        let result = asArray().map(transform)
-        var set = Set<U>()
-        set.addAll(result)
-        return set
+        return Set<U>(dictionary.keys.map(transform))
     }
     
     public func reduce<U>(initial: U, combine: (U, T) -> U) -> U {
-        return asArray().reduce(initial, combine: combine)
+        return Swift.reduce(dictionary.keys, initial, combine)
     }
     
     public func asArray() -> [T] {
-        return [T](map.keys)
+        return [T](dictionary.keys)
     }
     
 }
@@ -95,11 +89,17 @@ public struct Set<T : Hashable> {
 // SequenceType conformance
 extension Set : SequenceType {
     public func generate() -> GeneratorOf<T> {
-        return GeneratorOf(map.keys.generate())
+        return GeneratorOf(dictionary.keys.generate())
     }
 }
 
-// SequenceType conformance
+extension Set : ArrayLiteralConvertible {
+    public init(arrayLiteral elements: T...) {
+        addAll(elements)
+    }
+}
+
+// Set operations
 extension Set {
     public func equals(other: Set<T>) -> Bool {
         return self.count == other.count && containsAll(other)

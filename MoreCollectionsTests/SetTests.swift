@@ -32,6 +32,16 @@ class SetTests: XCTestCase {
         XCTAssertTrue(contains(temp, 5))
     }
     
+    func testArrayLiteralConvertible(){
+        var temp : Set = [1, 2, 3, 4, 5, 5, 5, 5]
+        XCTAssertEqual(5, temp.count)
+        XCTAssertTrue(contains(temp, 1))
+        XCTAssertFalse(contains(temp, 100))
+        
+        temp = []
+        XCTAssertTrue(temp.isEmpty())
+    }
+    
     func testIsEmpty(){
         XCTAssertEqual(0, set.count)
         XCTAssertTrue(set.isEmpty())
