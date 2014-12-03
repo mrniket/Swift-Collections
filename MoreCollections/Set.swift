@@ -14,8 +14,6 @@ public struct Set<T : Hashable> {
     let IGNORED = 0
     var dictionary: [T: Int] = [:]
     
-    // Equals if set1.count == set2.count && set1.containsAll(set2)
-    
     public init<S: SequenceType where S.Generator.Element == T>(_ sequence: S) {
         addAll(sequence)
     }
@@ -83,10 +81,8 @@ public struct Set<T : Hashable> {
     public func asArray() -> [T] {
         return [T](dictionary.keys)
     }
-    
 }
 
-// SequenceType conformance
 extension Set : SequenceType {
     public func generate() -> GeneratorOf<T> {
         return GeneratorOf(dictionary.keys.generate())
@@ -99,14 +95,12 @@ extension Set : ArrayLiteralConvertible {
     }
 }
 
-// Set operations
-extension Set {
+// Equality conformance
+extension Set : Equatable {
     public func equals(other: Set<T>) -> Bool {
-        return self.count == other.count && containsAll(other)
+        return self.count == other.count && self.containsAll(other)
     }
 }
-
-// equality
-func ==<T>(lhs: Set<T>, rhs: Set<T>) -> Bool {
+public func ==<T>(lhs: Set<T>, rhs: Set<T>) -> Bool {
     return lhs.equals(rhs)
 }
