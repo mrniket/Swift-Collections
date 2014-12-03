@@ -11,8 +11,12 @@ import Foundation
 // Implementation of Multimap that uses a Swift Array to store the values for a given key. A Swift Dictionary associates each key with an Array of values.
 public struct MultiMap<K : Hashable, V : Equatable> : SequenceType {
     typealias Values = [V]
-    typealias Entry = (K, V)
+    typealias Entry = (key: K, value: V)
     var map: [K: Values] = [:]
+    
+    public init<S: SequenceType where S.Generator.Element == Entry>(_ sequence: S) {
+        putAll(sequence)
+    }
     
     public init(){}
     
@@ -75,6 +79,12 @@ public struct MultiMap<K : Hashable, V : Equatable> : SequenceType {
         map[key]!.append(value)
     }
     
+    mutating func putAll<S: SequenceType where S.Generator.Element == Entry>(sequence: S) {
+        for entry in [Entry](sequence) {
+            put(entry.key, value: entry.value)
+        }
+    }
+    
     // Removes all key-value pairs with the key key and the value value from this multimap, if such exists.
     mutating func removeValueForKey(key: K, value: V) {
         map[key] = get(key).filter {$0 != value}
@@ -105,4 +115,23 @@ public struct MultiMap<K : Hashable, V : Equatable> : SequenceType {
         }
         return IndexingGenerator(allEntries)
     }
+}
+
+// Equality conformance
+extension MultiMap : Equatable {
+    public func equals(other: MultiMap<K, V>) -> Bool {
+        if(self.keys != other.keys){
+            return false
+        }
+        for key in self.keys {
+            if(self.get(key) != other.get(key)){
+                return false
+            }
+        }
+        return true
+        
+    }
+}
+public func ==<K, V>(lhs: MultiMap<K, V>, rhs: MultiMap<K, V>) -> Bool {
+    return lhs.equals(rhs)
 }

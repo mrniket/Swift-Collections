@@ -85,7 +85,6 @@ public struct Tree<N : Hashable>  : SequenceType {
             path += [node]
             var possibleParent = getParent(node)
             while(possibleParent != nil){
-                println("Here: \(possibleParent)");
                 path += [possibleParent!]
                 possibleParent = getParent(possibleParent!)
             }
