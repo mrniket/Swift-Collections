@@ -10,12 +10,14 @@ As a general rule, the API follow Swift's Array and Dictionary API while strongl
 ## Collections
 
 ### Set
-A collection that contains no duplicate elements.  More formally, contain no pair of elements e1 and e2 such that e1 == e2.  
+A collection that contains no duplicate elements.  More formally, contain no pair of elements e1 and e2 such that e1 == e2.
+
+This is not an ordered set, deterministic iteration is not guarantee.  As such it cannot be indexed via the index operator.
 
 ### Tree
 A collection that models a hierarchical tree structure, with a root value and subtrees of children, represented as a set of linked nodes.
 
-### MultiMap
+### Multimap
 A collection that maps keys to values, similar to Map, but in which each key may be associated with multiple values.
 
 ## Version
@@ -35,7 +37,7 @@ Sets
 - Overload operators for above operations
 - Add performance test cases
 
-MultiMap
+Multimap
 - Subscript API
 - map, reduce, filter functions
 - Add performance test cases

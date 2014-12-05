@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Tree<N : Hashable>  : SequenceType {
-    var childrenMap = MultiMap<N, N>()
+    var childrenMap = Multimap<N, N>()
     var parentMap : [N:N] = [:]
     var allNodes = Set<N>()
     var firstNode : N?

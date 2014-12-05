@@ -10,9 +10,9 @@
 		DA6B85D91A1E7CE200D14506 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B85D81A1E7CE200D14506 /* SetTests.swift */; };
 		DA7D8DD31A18EF6E002B5A5E /* MoreCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA7D8DD91A18EF6E002B5A5E /* MoreCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7D8DCD1A18EF6E002B5A5E /* MoreCollections.framework */; };
-		DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */; };
-		DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */; };
-		DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */; };
+		DA7D8DEB1A18EF82002B5A5E /* Multimap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* Multimap.swift */; };
+		DA7D8DEC1A18EF82002B5A5E /* Multimap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* Multimap.swift */; };
+		DA7D8DF01A18EF8E002B5A5E /* MultimapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DEF1A18EF8E002B5A5E /* MultimapTests.swift */; };
 		DAA7FDFA1A190E83002952AC /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDF91A190E83002952AC /* Tree.swift */; };
 		DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDF91A190E83002952AC /* Tree.swift */; };
 		DABABFC41A1FF83E00D13603 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABABFC31A1FF83E00D13603 /* TreeTests.swift */; };
@@ -37,8 +37,8 @@
 		DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreCollections.h; sourceTree = "<group>"; };
 		DA7D8DD81A18EF6E002B5A5E /* MoreCollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoreCollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D8DDE1A18EF6E002B5A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiMap.swift; sourceTree = "<group>"; };
-		DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiMapTests.swift; sourceTree = "<group>"; };
+		DA7D8DE91A18EF82002B5A5E /* Multimap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Multimap.swift; sourceTree = "<group>"; };
+		DA7D8DEF1A18EF8E002B5A5E /* MultimapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultimapTests.swift; sourceTree = "<group>"; };
 		DA7D8DF21A18F069002B5A5E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DA7D8DF31A18F0D1002B5A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAA7FDF91A190E83002952AC /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			children = (
 				DADC93451A1BB13A005F82DF /* Set.swift */,
 				DAA7FDF91A190E83002952AC /* Tree.swift */,
-				DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */,
+				DA7D8DE91A18EF82002B5A5E /* Multimap.swift */,
 				DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */,
 				DA7D8DD01A18EF6E002B5A5E /* Supporting Files */,
 			);
@@ -112,7 +112,7 @@
 			children = (
 				DABABFC31A1FF83E00D13603 /* TreeTests.swift */,
 				DA6B85D81A1E7CE200D14506 /* SetTests.swift */,
-				DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */,
+				DA7D8DEF1A18EF8E002B5A5E /* MultimapTests.swift */,
 				DA7D8DDD1A18EF6E002B5A5E /* Supporting Files */,
 			);
 			path = MoreCollectionsTests;
@@ -235,7 +235,7 @@
 			files = (
 				DADC93461A1BB13A005F82DF /* Set.swift in Sources */,
 				DAA7FDFA1A190E83002952AC /* Tree.swift in Sources */,
-				DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */,
+				DA7D8DEB1A18EF82002B5A5E /* Multimap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,10 +245,10 @@
 			files = (
 				DA6B85D91A1E7CE200D14506 /* SetTests.swift in Sources */,
 				DABABFC41A1FF83E00D13603 /* TreeTests.swift in Sources */,
-				DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */,
+				DA7D8DEC1A18EF82002B5A5E /* Multimap.swift in Sources */,
 				DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */,
 				DADC93471A1BB13A005F82DF /* Set.swift in Sources */,
-				DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */,
+				DA7D8DF01A18EF8E002B5A5E /* MultimapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

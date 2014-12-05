@@ -9,12 +9,12 @@
 import UIKit
 import XCTest
 
-class MultiMapTests: XCTestCase {
-    var multiMap = MultiMap<Int, Int>()
+class MultimapTests: XCTestCase {
+    var multimap = Multimap<Int, Int>()
 
     override func setUp() {
         super.setUp()
-        multiMap.removeAll()
+        multimap.removeAll()
     }
     
     override func tearDown() {
@@ -23,40 +23,40 @@ class MultiMapTests: XCTestCase {
     }
     
     func testInitialState() {
-        XCTAssertTrue(multiMap.isEmpty(), "MultiMap must start as empty")
+        XCTAssertTrue(multimap.isEmpty(), "MultiMap must start as empty")
     }
     
     func testInitWithSequence(){
-        multiMap.put(1, value:2)
-        multiMap.put(1, value:2)
-        multiMap.put(3, value:4)
-        XCTAssertTrue(multiMap.containsValue(2))
-        XCTAssertTrue(multiMap.containsKey(1))
+        multimap.put(1, value:2)
+        multimap.put(1, value:2)
+        multimap.put(3, value:4)
+        XCTAssertTrue(multimap.containsValue(2))
+        XCTAssertTrue(multimap.containsKey(1))
         
-        let copy = MultiMap(multiMap)
+        let copy = Multimap(multimap)
         XCTAssertTrue(copy.containsValue(2))
         XCTAssertTrue(copy.containsKey(1))
         
         let array = [(1,2), (2,3)]
-        var copy2 = MultiMap(array)
+        var copy2 = Multimap(array)
         copy2.putAll(array)
         XCTAssertTrue(copy2.containsValue(2))
         XCTAssertTrue(copy2.containsKey(1))
     }
     
     func testPutAll(){
-        multiMap.put(1, value:2)
-        multiMap.put(1, value:2)
-        multiMap.put(3, value:4)
-        XCTAssertTrue(multiMap.containsValue(2))
-        XCTAssertTrue(multiMap.containsKey(1))
+        multimap.put(1, value:2)
+        multimap.put(1, value:2)
+        multimap.put(3, value:4)
+        XCTAssertTrue(multimap.containsValue(2))
+        XCTAssertTrue(multimap.containsKey(1))
         
-        var copy = MultiMap<Int, Int>()
-        copy.putAll(multiMap)
+        var copy = Multimap<Int, Int>()
+        copy.putAll(multimap)
         XCTAssertTrue(copy.containsValue(2))
         XCTAssertTrue(copy.containsKey(1))
         
-        var copy2 = MultiMap<Int, Int>()
+        var copy2 = Multimap<Int, Int>()
         let array = [(1,2), (2,3)]
         copy2.putAll(array)
         XCTAssertTrue(copy2.containsValue(2))
@@ -64,109 +64,119 @@ class MultiMapTests: XCTestCase {
     }
     
     func testRemoveAll() {
-        multiMap.put(1, value: 2);
-        XCTAssertFalse(multiMap.isEmpty())
-        multiMap.removeAll()
-        XCTAssertTrue(multiMap.isEmpty())
+        multimap.put(1, value: 2);
+        XCTAssertFalse(multimap.isEmpty())
+        multimap.removeAll()
+        XCTAssertTrue(multimap.isEmpty())
     }
     
     func testContainsEntry() {
         let key = 1
         let value = 2
-        XCTAssertFalse(multiMap.containsEntry(key, value:value))
-        multiMap.put(key, value: value)
-        XCTAssertTrue(multiMap.containsEntry(key, value:value))
-        XCTAssertFalse(multiMap.containsEntry(3, value:value))
-        XCTAssertFalse(multiMap.containsEntry(key, value:4))
+        XCTAssertFalse(multimap.containsEntry(key, value:value))
+        multimap.put(key, value: value)
+        XCTAssertTrue(multimap.containsEntry(key, value:value))
+        XCTAssertFalse(multimap.containsEntry(3, value:value))
+        XCTAssertFalse(multimap.containsEntry(key, value:4))
     }
     
     func testContainsKey() {
         let key = 1
         let value = 3
-        XCTAssertFalse(multiMap.containsKey(key))
-        multiMap.put(key, value: value)
-        XCTAssertTrue(multiMap.containsKey(key))
+        XCTAssertFalse(multimap.containsKey(key))
+        multimap.put(key, value: value)
+        XCTAssertTrue(multimap.containsKey(key))
     }
     
     func testContainsValue() {
         let value = 200
-        multiMap.put(1, value:value)
-        multiMap.put(1, value:2)
-        multiMap.put(3, value:4)
-        XCTAssertTrue(multiMap.containsValue(value))
-        XCTAssertTrue(multiMap.containsValue(4))
+        multimap.put(1, value:value)
+        multimap.put(1, value:2)
+        multimap.put(3, value:4)
+        XCTAssertTrue(multimap.containsValue(value))
+        XCTAssertTrue(multimap.containsValue(4))
     }
     
     func testGetAllKeys() {
-        XCTAssertTrue(multiMap.keys.isEmpty)
-        multiMap.put(1, value: 2)
-        XCTAssertEqual(multiMap.keys, [1])
-        multiMap.put(12, value: 4)
-        XCTAssertEqual(multiMap.keys.count, 2)
+        XCTAssertTrue(multimap.keys.isEmpty)
+        multimap.put(1, value: 2)
+        XCTAssertEqual(multimap.keys, [1])
+        multimap.put(12, value: 4)
+        XCTAssertEqual(multimap.keys.count, 2)
     }
     
     func testGetAllValues() {
-        XCTAssertEqual(multiMap.values.count, multiMap.count)
-        multiMap.put(1, value:1)
-        multiMap.put(1, value:1)
-        multiMap.put(3, value:1)
-        XCTAssertEqual(multiMap.values, [1,1,1])
-        XCTAssertEqual(multiMap.values.count, multiMap.count)
+        XCTAssertEqual(multimap.values.count, multimap.count)
+        multimap.put(1, value:1)
+        multimap.put(1, value:1)
+        multimap.put(3, value:1)
+        XCTAssertEqual(multimap.values, [1,1,1])
+        XCTAssertEqual(multimap.values.count, multimap.count)
         
-        multiMap.removeAll()
-        XCTAssertTrue(multiMap.isEmpty())
-        multiMap.put(14, value:14)
-        XCTAssertEqual(multiMap.values.count, 1)
-        XCTAssertEqual(multiMap.values.count, multiMap.count)
+        multimap.removeAll()
+        XCTAssertTrue(multimap.isEmpty())
+        multimap.put(14, value:14)
+        XCTAssertEqual(multimap.values.count, 1)
+        XCTAssertEqual(multimap.values.count, multimap.count)
     }
     
     func testRemoveValueForKey() {
-        multiMap.put(1, value:1)
-        multiMap.put(1, value:2)
-        multiMap.put(2, value:1)
-        multiMap.removeValueForKey(1, value:2)
-        XCTAssertEqual(multiMap.values, [1,1])
+        multimap.put(1, value:1)
+        multimap.put(1, value:2)
+        multimap.put(2, value:1)
+        multimap.removeValueForKey(1, value:2)
+        XCTAssertEqual(multimap.values, [1,1])
         
         // Ensure removes all matches
-        multiMap.put(1, value:1)
-        XCTAssertEqual(multiMap.values, [1,1,1])
-        multiMap.removeValueForKey(1, value:1)
-        XCTAssertEqual(multiMap.get(2), [1])
-        XCTAssertEqual(multiMap.count, 1)
+        multimap.put(1, value:1)
+        XCTAssertEqual(multimap.values, [1,1,1])
+        multimap.removeValueForKey(1, value:1)
+        XCTAssertEqual(multimap.get(2), [1])
+        XCTAssertEqual(multimap.count, 1)
     }
     
     func testRemoveValuesForKey() {
-        multiMap.put(1, value:1)
-        multiMap.put(1, value:1)
-        multiMap.put(2, value:1)
-        XCTAssertEqual(multiMap.values, [1,1,1])
-        multiMap.removeValuesForKey(1)
-        XCTAssertEqual(multiMap.values, [1])
+        multimap.put(1, value:1)
+        multimap.put(1, value:1)
+        multimap.put(2, value:1)
+        XCTAssertEqual(multimap.values, [1,1,1])
+        multimap.removeValuesForKey(1)
+        XCTAssertEqual(multimap.values, [1])
         
         let doesNotExist = 3
-        multiMap.removeValuesForKey(doesNotExist)
-        XCTAssertEqual(multiMap.values, [1])
+        multimap.removeValuesForKey(doesNotExist)
+        XCTAssertEqual(multimap.values, [1])
         
-        multiMap.removeValuesForKey(2)
-        XCTAssertTrue(multiMap.values.isEmpty)
+        multimap.removeValuesForKey(2)
+        XCTAssertTrue(multimap.values.isEmpty)
     }
     
     func testEquals(){
-        var copy = MultiMap<Int, Int>()
-        XCTAssertTrue(multiMap.equals(copy))
-        multiMap.put(1, value:1)
-        XCTAssertFalse(multiMap.equals(copy))
+        var copy = Multimap<Int, Int>()
+        XCTAssertTrue(multimap.equals(copy))
+        multimap.put(1, value:1)
+        XCTAssertFalse(multimap.equals(copy))
         copy.put(1, value:1)
-        XCTAssertTrue(multiMap.equals(copy))
+        XCTAssertTrue(multimap.equals(copy))
     }
     
     func testEqualsOperator(){
-        var copy = MultiMap<Int, Int>()
-        XCTAssertTrue(multiMap == copy)
-        multiMap.put(1, value:1)
-        XCTAssertFalse(multiMap == copy)
+        var copy = Multimap<Int, Int>()
+        XCTAssertTrue(multimap == copy)
+        multimap.put(1, value:1)
+        XCTAssertFalse(multimap == copy)
         copy.put(1, value:1)
-        XCTAssertTrue(multiMap == copy)
-        XCTAssertEqual(multiMap, copy)
+        XCTAssertTrue(multimap == copy)
+        XCTAssertEqual(multimap, copy)
+    }
+    
+    func testFilter() {
+        multimap.put(1, value:2)
+        multimap.put(1, value:2)
+        multimap.put(3, value:4)
+        XCTAssertTrue(multimap.containsValue(4))
+        var result = multimap.filter() {entry in entry.value == 2}
+        XCTAssertEqual(result.count, 2)
+        XCTAssertFalse(result.containsValue(4))
     }
 }

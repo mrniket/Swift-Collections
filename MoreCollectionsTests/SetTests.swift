@@ -128,13 +128,14 @@ class SetTests: XCTestCase {
     func testMap() {
         set.addAll([1,2,3,4,5])
         XCTAssertTrue(contains(set, 2))
-        var result = set.map() {item in "\(item)"}
+        let result = set.map() {item in "\(item)"}
         XCTAssertTrue(contains(result, "2"))
     }
     
     func testReduce() {
         set.addAll([2,3,5])
-        // TODO
+        let result = set.reduce(0) { $0 + $1 }
+        XCTAssertEqual(10, result)
     }
     
     func testGenerate() {
