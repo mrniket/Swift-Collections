@@ -17,11 +17,6 @@ class MultimapTests: XCTestCase {
         multimap.removeAll()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testInitialState() {
         XCTAssertTrue(multimap.isEmpty(), "MultiMap must start as empty")
     }
@@ -178,5 +173,22 @@ class MultimapTests: XCTestCase {
         var result = multimap.filter() {entry in entry.value == 2}
         XCTAssertEqual(result.count, 2)
         XCTAssertFalse(result.containsValue(4))
+    }
+    
+    func testMap() {
+        multimap.put(1, value:2)
+        multimap.put(1, value:2)
+        multimap.put(3, value:4)
+        XCTAssertTrue(multimap.containsValue(2))
+        let result = multimap.map() {entry in (entry.key, "\(entry.value)")}
+        XCTAssertTrue(result.containsValue("2"))
+    }
+    
+    func testReduce() {
+        multimap.put(1, value:2)
+        multimap.put(1, value:2)
+        multimap.put(3, value:4)
+        let result = multimap.reduce(0) { $0 + $1.value }
+        XCTAssertEqual(8, result)
     }
 }
