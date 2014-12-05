@@ -24,12 +24,11 @@ A collection that maps keys to 0 or more, similar to Map, but in which each key 
 
 0.1 Alpha.  The API is subject to change.   
 
-If any of these collections exist already in Swift's standard library let me know and I will delete the duplicate classes found here.   If any collections
-can be improved, please file a bug or pull request.
-
 ## Collaborate
 
 All development happens on GitHub.  File a bug or pull request for new features and fixes.  
+
+If any of these collections exist already in Swift's standard library let me know and I will delete the duplicate classes found here.  Suggestions for improvements are welcome!
 
 ## In Progress
 
@@ -48,6 +47,12 @@ Tree
 - Add performance test cases
 
 Other Potential Collections
+- Stack
 - BiMap
 - Table
-- Stack
+
+## Using this code
+
+This code is licensed under the standard MIT license.  Attribution is not required but always welcome.
+
+If you find bugs, or ways to improve this code, please file a bug or pull request so everyone can benifit.
