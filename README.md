@@ -53,6 +53,6 @@ Other Potential Collections
 
 ## Using this code
 
-This code is licensed under the standard MIT license.  Attribution is not required but always welcome.
+This code is licensed under the standard MIT license.
 
-If you find bugs, or ways to improve this code, please file a bug or pull request so everyone can benifit.
+If you find bugs or ways to improve this code, please file a bug or pull request so everyone can benifit.
