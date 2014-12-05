@@ -15,7 +15,7 @@ A collection that contains no duplicate elements.  More formally, contain no pai
 This is not an ordered set, deterministic iteration is not guarantee.  As such it cannot be indexed via the index operator.
 
 ### Tree
-A collection that models a hierarchical tree structure, with a root value and subtrees of children, represented as a set of linked nodes.
+A collection that models linked nodes in a hierarchical tree structure.  It contains a root value and 0 or more children trees.
 
 ### Multimap
 A collection that maps keys to values, similar to Map, but in which each key may be associated with multiple values.
@@ -39,11 +39,10 @@ Sets
 
 Multimap
 - Subscript API
-- map, reduce, filter functions
 - Add performance test cases
 
 Tree
-- Traversal functions
+- Traversal API
 - map, reduce, filter functions
 - Add performance test cases
 
