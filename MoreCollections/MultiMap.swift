@@ -9,17 +9,19 @@
 import Foundation
 
 // Implementation of Multimap that uses a Swift Array to store the values for a given key. A Swift Dictionary associates each key with an Array of values.
-public struct Multimap<K : Hashable, V : Equatable> {
+
+public struct Multimap<K:Hashable, V:Equatable> {
     typealias Values = [V]
-    typealias Entry = (key: K, value: V)
-    var map: [K: Values] = [:]
-    
-    public init<S: SequenceType where S.Generator.Element == Entry>(_ sequence: S) {
+    typealias Entry = (key:K, value:V)
+    var map: [K:Values] = [:]
+
+    public init<S:SequenceType where S.Generator.Element == Entry>(_ sequence: S) {
         putAll(sequence)
     }
-    
-    public init(){}
-    
+
+    public init() {
+    }
+
     // Returns the number of key-value pairs in this Multimap.
     var count: Int {
         var size = 0
@@ -28,12 +30,12 @@ public struct Multimap<K : Hashable, V : Equatable> {
         }
         return size
     }
-    
+
     // Returns a new array containing the key from each key-value pair in this Multimap
     var keys: [K] {
         return [K](map.keys)
     }
-    
+
     // Returns a new array containing the value from each key-value pair contained in this Multimap, without collapsing duplicates (so values.count == self.count).  Order is not deterministic
     var values: [V] {
         var allValues = [V]()
@@ -42,27 +44,27 @@ public struct Multimap<K : Hashable, V : Equatable> {
         }
         return allValues
     }
-    
+
     // Returns true if this Multimap contains at least one key-value pair with the key key and the value value.
     func containsEntry(key: K, value: V) -> Bool {
         return contains(get(key), value)
     }
-    
+
     // Returns true if this Multimap contains at least one key-value pair with the key key.
     func containsKey(key: K) -> Bool {
         return map[key] != nil;
     }
-    
+
     //Returns true if this Multimap contains at least one key-value pair with the value value.
     func containsValue(value: V) -> Bool {
         for key in map.keys {
-            if(containsEntry(key, value: value)){
+            if (containsEntry(key, value: value)) {
                 return true
             }
         }
         return false
     }
-    
+
     // Returns a new array of the values associated with key in this Multimap, if any.
     func get(key: K) -> [V] {
         if let values = map[key] {
@@ -70,57 +72,59 @@ public struct Multimap<K : Hashable, V : Equatable> {
         }
         return []
     }
-    
+
     // Stores a key-value pair in this Multimap.
     mutating func put(key: K, value: V) {
-        if(!containsKey(key)){
+        if (!containsKey(key)) {
             map[key] = []
         }
         map[key]!.append(value)
     }
-    
-    mutating func putAll<S: SequenceType where S.Generator.Element == Entry>(sequence: S) {
+
+    mutating func putAll<S:SequenceType where S.Generator.Element == Entry>(sequence: S) {
         for entry in [Entry](sequence) {
             put(entry.key, value: entry.value)
         }
     }
-    
+
     // Removes all key-value pairs with the key key and the value value from this Multimap, if such exists.
     mutating func removeValueForKey(key: K, value: V) {
-        map[key] = get(key).filter {$0 != value}
+        map[key] = get(key).filter {
+            $0 != value
+        }
     }
-    
+
     // Removes all values associated with the key key.
     mutating func removeValuesForKey(key: K) {
         map.removeValueForKey(key)
     }
-    
+
     // Removes all key-value pairs from the Multimap, leaving it empty.
     mutating func removeAll() {
         map.removeAll()
     }
-    
+
     // Returns true if this Multimap contains no key-value pairs. Equivalent to count == 0 but more efficient when this Multimap is empty
     func isEmpty() -> Bool {
         return map.count == 0 || self.count == 0;
     }
-    
+
     public func filter(includeElement: (Entry) -> Bool) -> Multimap<K, V> {
         return Multimap(Swift.filter(self, includeElement))
     }
 
-    public func map<OutKey : Hashable, OutValue : Equatable>(transform: (Entry) -> (OutKey, OutValue)) ->  Multimap<OutKey, OutValue> {
+    public func map<OutKey:Hashable, OutValue:Equatable>(transform: (Entry) -> (OutKey, OutValue)) -> Multimap<OutKey, OutValue> {
         var result = Multimap<OutKey, OutValue>()
         result.putAll(Swift.map(self, transform))
         return result
     }
-    
+
     public func reduce<U>(initial: U, combine: (U, Entry) -> U) -> U {
         return Swift.reduce(self, initial, combine)
     }
 }
 
-extension Multimap : SequenceType {
+extension Multimap: SequenceType {
     public func generate() -> IndexingGenerator<[Entry]> {
         var allEntries = [Entry]()
         for (key, values) in map {
@@ -134,20 +138,22 @@ extension Multimap : SequenceType {
 }
 
 // Equality conformance
-extension Multimap : Equatable {
+
+extension Multimap: Equatable {
     public func equals(other: Multimap<K, V>) -> Bool {
-        if(self.keys != other.keys){
+        if (self.keys != other.keys) {
             return false
         }
         for key in self.keys {
-            if(self.get(key) != other.get(key)){
+            if (self.get(key) != other.get(key)) {
                 return false
             }
         }
         return true
-        
+
     }
 }
+
 public func ==<K, V>(lhs: Multimap<K, V>, rhs: Multimap<K, V>) -> Bool {
     return lhs.equals(rhs)
 }

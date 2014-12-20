@@ -18,7 +18,7 @@ This is not an ordered set, deterministic iteration is not guaranteed.  As such 
 A collection that models linked nodes in a hierarchical tree structure.  A tree contains a root value and 0 or more children trees.
 
 ### Multimap
-A collection that maps keys to 0 or more, similar to Map, but in which each key may be associated with multiple values.
+A collection that maps keys to values, similar to Map, but in which each a key may be associated with multiple values.
 
 ## Version
 
