@@ -2,17 +2,15 @@
 //  Tree.swift
 //  MoreCollections
 //
-//  Created by Jarrett on 2014-11-16.
 //  Copyright (c) 2014 Jarrett Bulat. All rights reserved.
 //
-
 import Foundation
 
-public struct Tree<N:Hashable>: SequenceType {
-    var childrenMap = Multimap<N, N>()
-    var parentMap: [N:N] = [:]
-    var allNodes = Set<N>()
-    var firstNode: N?
+public struct Tree<N:Hashable> {
+    private var childrenMap = Multimap<N, N>()
+    private var parentMap: [N:N] = [:]
+    private var allNodes = Set<N>()
+    private var firstNode: N?
 
     public init() {
     }
@@ -28,9 +26,13 @@ public struct Tree<N:Hashable>: SequenceType {
             return firstNode
         }
     }
+    
+    public var traverse : TreeTraversal<N> {
+        return TreeTraversal<N>(tree: self)
+    }
 
-    public var nodes: [N] {
-        return allNodes.asArray()
+    public var nodes: Set<N> {
+        return allNodes
     }
 
     public mutating func prune(node: N) {
@@ -75,7 +77,7 @@ public struct Tree<N:Hashable>: SequenceType {
     }
 
     public func isDisjoined(node: N) -> Bool {
-        return isEmpty() || !contains(self, node) || !contains(getTreePath(node), root!)
+        return isEmpty() || !contains(self.allNodes, node) || !contains(getTreePath(node), root!)
     }
 
     public func getParent(node: N) -> N? {
@@ -84,7 +86,7 @@ public struct Tree<N:Hashable>: SequenceType {
 
     public func getTreePath(node: N) -> [N] {
         var path = [N]()
-        if (contains(self, node)) {
+        if (contains(self.allNodes, node)) {
             path += [node]
             var possibleParent = getParent(node)
             while (possibleParent != nil) {
@@ -102,9 +104,5 @@ public struct Tree<N:Hashable>: SequenceType {
 
     public func isEmpty() -> Bool {
         return self.count == 0
-    }
-
-    public func generate() -> GeneratorOf<N> {
-        return allNodes.generate()
     }
 }

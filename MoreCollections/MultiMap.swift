@@ -2,14 +2,11 @@
 //  Multimap.swift
 //  MoreCollections
 //
-//  Created by Jarrett on 2014-11-15.
 //  Copyright (c) 2014 Jarrett Bulat. All rights reserved.
 //
-
 import Foundation
 
 // Implementation of Multimap that uses a Swift Array to store the values for a given key. A Swift Dictionary associates each key with an Array of values.
-
 public struct Multimap<K:Hashable, V:Equatable> {
     typealias Values = [V]
     typealias Entry = (key:K, value:V)
@@ -134,6 +131,10 @@ extension Multimap: SequenceType {
             }
         }
         return IndexingGenerator(allEntries)
+    }
+    
+    subscript (key: K) -> Values {
+        return get(key)
     }
 }
 

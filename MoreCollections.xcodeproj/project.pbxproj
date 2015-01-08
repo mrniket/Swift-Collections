@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1AEF581A5D8B9900C3D114 /* TreeTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */; };
 		DA6B85D91A1E7CE200D14506 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B85D81A1E7CE200D14506 /* SetTests.swift */; };
 		DA7D8DD31A18EF6E002B5A5E /* MoreCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA7D8DD91A18EF6E002B5A5E /* MoreCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7D8DCD1A18EF6E002B5A5E /* MoreCollections.framework */; };
@@ -16,6 +17,8 @@
 		DAA7FDFA1A190E83002952AC /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDF91A190E83002952AC /* Tree.swift */; };
 		DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDF91A190E83002952AC /* Tree.swift */; };
 		DABABFC41A1FF83E00D13603 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABABFC31A1FF83E00D13603 /* TreeTests.swift */; };
+		DAC6D1CE1A4C94E5002F36F2 /* TreeTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */; };
+		DADAAA831A5785C000C0D2EF /* TreeTraversalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */; };
 		DADC93461A1BB13A005F82DF /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC93451A1BB13A005F82DF /* Set.swift */; };
 		DADC93471A1BB13A005F82DF /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC93451A1BB13A005F82DF /* Set.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +46,8 @@
 		DA7D8DF31A18F0D1002B5A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAA7FDF91A190E83002952AC /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		DABABFC31A1FF83E00D13603 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
+		DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTraversal.swift; sourceTree = "<group>"; };
+		DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTraversalTests.swift; sourceTree = "<group>"; };
 		DADC93451A1BB13A005F82DF /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		DAE053371A2527720051606D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +99,7 @@
 				DAA7FDF91A190E83002952AC /* Tree.swift */,
 				DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */,
 				DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */,
+				DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */,
 				DA7D8DD01A18EF6E002B5A5E /* Supporting Files */,
 			);
 			path = MoreCollections;
@@ -110,6 +116,7 @@
 		DA7D8DDC1A18EF6E002B5A5E /* MoreCollectionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */,
 				DABABFC31A1FF83E00D13603 /* TreeTests.swift */,
 				DA6B85D81A1E7CE200D14506 /* SetTests.swift */,
 				DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */,
@@ -235,6 +242,7 @@
 			files = (
 				DADC93461A1BB13A005F82DF /* Set.swift in Sources */,
 				DAA7FDFA1A190E83002952AC /* Tree.swift in Sources */,
+				DAC6D1CE1A4C94E5002F36F2 /* TreeTraversal.swift in Sources */,
 				DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +257,8 @@
 				DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */,
 				DADC93471A1BB13A005F82DF /* Set.swift in Sources */,
 				DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */,
+				DA1AEF581A5D8B9900C3D114 /* TreeTraversal.swift in Sources */,
+				DADAAA831A5785C000C0D2EF /* TreeTraversalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

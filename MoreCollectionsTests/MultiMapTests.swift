@@ -2,10 +2,8 @@
 //  ArrayMultiMapTests.swift
 //  MoreCollections
 //
-//  Created by Jarrett on 2014-11-15.
 //  Copyright (c) 2014 Jarrett Bulat. All rights reserved.
 //
-
 import UIKit
 import XCTest
 
@@ -196,5 +194,15 @@ class MultimapTests: XCTestCase {
             $0 + $1.value
         }
         XCTAssertEqual(8, result)
+    }
+    
+    func testSubscript() {
+        multimap.put(1, value: 5)
+        multimap.put(1, value: 5)
+        multimap.put(3, value: 4)
+        
+        XCTAssertEqual(multimap[3], [4])
+        XCTAssertEqual(multimap[1].count, 2)
+
     }
 }

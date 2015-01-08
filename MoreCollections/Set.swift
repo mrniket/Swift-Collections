@@ -2,10 +2,8 @@
 //  Set.swift
 //  MoreCollections
 //
-//  Created by Jarrett on 2014-11-18.
 //  Copyright (c) 2014 Jarrett Bulat. All rights reserved.
 //
-
 import Foundation
 
 // A collection that contains no duplicate elements.  More formally, sets contain no pair of elements e1 and e2 such that e1 == e2

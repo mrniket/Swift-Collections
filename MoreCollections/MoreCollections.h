@@ -2,10 +2,8 @@
 //  MoreCollections.h
 //  MoreCollections
 //
-//  Created by Jarrett on 2014-11-16.
 //  Copyright (c) 2014 Jarrett Bulat. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for MoreCollections.
