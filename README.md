@@ -35,7 +35,6 @@ If any of these collections exist already in Swift's standard library let me kno
 Sets
 - Operations: Union, Complement, Intersect, Difference
 - Overload operators for above operations
-- Add performance test cases
 
 Multimap
 - Subscript API
@@ -50,7 +49,6 @@ Other Potential Collections
 - Stack
 - Queue
 - BiMap
-- Table
 
 ## Using this code
 

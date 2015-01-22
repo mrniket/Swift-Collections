@@ -2,7 +2,7 @@
 //  TraversalTests.swift
 //  MoreCollections
 //
-//  Copyright (c) 2015 Jarrett Bulat. All rights reserved.
+//  Copyright (c) 2015 Swift-Collections project (https://github.com/jbulat/Swift-Collections)
 //
 import XCTest
 

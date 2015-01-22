@@ -2,7 +2,7 @@
 //  Traversal.swift
 //  MoreCollections
 //
-//  Copyright (c) 2014 Jarrett Bulat. All rights reserved.
+//  Copyright (c) 2015 Swift-Collections project (https://github.com/jbulat/Swift-Collections)
 //
 import Foundation
 
@@ -31,10 +31,6 @@ public class TreeTraversal<N : Hashable> {
     //    }
     //
     //    private func depthFirstPreOrder(node:N) -> [N]{
-    //        var result = [node]
-    //        for child in tree.getChildren(node){
-    //            result += depthFirstPreOrder(child)
-    //        }
-    //        return result
+    //      // todo
     //    }
 }
