@@ -25,7 +25,7 @@ public struct Set<T:Hashable> {
     }
 
     public mutating func add(item: T) -> Bool {
-        let isNew = !contains(self, item)
+        let isNew = !contains(item)
         dictionary[item] = IGNORED
         return isNew
     }
@@ -37,7 +37,7 @@ public struct Set<T:Hashable> {
     }
 
     public mutating func remove(item: T) -> Bool {
-        let exists = contains(self, item)
+        let exists = contains(item)
         dictionary[item] = nil
         return exists
     }
@@ -51,10 +51,15 @@ public struct Set<T:Hashable> {
     public mutating func removeAll() {
         dictionary.removeAll()
     }
+    
+    // Returns true if this set contains parameter item.  Alg complexity is is O(1), Swift.contains() is is O(n)
+    public func contains(item : T) -> Bool {
+        return dictionary[item] != nil
+    }
 
     public func containsAll<S:SequenceType where S.Generator.Element == T>(sequence: S) -> Bool {
         for item in [T](sequence) {
-            if (!contains(self, item)) {
+            if (!contains(item)) {
                 return false
             }
         }

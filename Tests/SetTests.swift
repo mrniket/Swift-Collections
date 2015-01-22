@@ -107,6 +107,14 @@ class SetTests: XCTestCase {
         set.removeAll()
         XCTAssertTrue(set.isEmpty())
     }
+    
+    func testContains() {
+        XCTAssertFalse(set.contains(1))
+        XCTAssertFalse(set.contains(11))
+        set.addAll([1, 2, 3, 4, 5])
+        XCTAssertTrue(set.contains(1))
+        XCTAssertFalse(set.contains(11))
+    }
 
     func testContainsAll() {
         XCTAssertTrue(set.containsAll([Int]()))

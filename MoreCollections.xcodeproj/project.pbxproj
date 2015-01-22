@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA1AEF581A5D8B9900C3D114 /* TreeTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */; };
+		DA2EEEC11A705E73006D8EC9 /* SetPerfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2EEEC01A705E73006D8EC9 /* SetPerfTest.swift */; };
 		DA6B85D91A1E7CE200D14506 /* SetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6B85D81A1E7CE200D14506 /* SetTests.swift */; };
 		DA7D8DD31A18EF6E002B5A5E /* MoreCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA7D8DD91A18EF6E002B5A5E /* MoreCollections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7D8DCD1A18EF6E002B5A5E /* MoreCollections.framework */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA2EEEC01A705E73006D8EC9 /* SetPerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPerfTest.swift; sourceTree = "<group>"; };
 		DA6B85D81A1E7CE200D14506 /* SetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTests.swift; sourceTree = "<group>"; };
 		DA7D8DCD1A18EF6E002B5A5E /* MoreCollections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MoreCollections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D8DD11A18EF6E002B5A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,8 +79,8 @@
 				DAE053371A2527720051606D /* .travis.yml */,
 				DA7D8DF31A18F0D1002B5A5E /* README.md */,
 				DA7D8DF21A18F069002B5A5E /* LICENSE */,
-				DA7D8DCF1A18EF6E002B5A5E /* MoreCollections */,
-				DA7D8DDC1A18EF6E002B5A5E /* MoreCollectionsTests */,
+				DA7D8DCF1A18EF6E002B5A5E /* Source */,
+				DA7D8DDC1A18EF6E002B5A5E /* Tests */,
 				DA7D8DCE1A18EF6E002B5A5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,17 +94,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA7D8DCF1A18EF6E002B5A5E /* MoreCollections */ = {
+		DA7D8DCF1A18EF6E002B5A5E /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				DADC93451A1BB13A005F82DF /* Set.swift */,
 				DAA7FDF91A190E83002952AC /* Tree.swift */,
 				DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */,
-				DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */,
 				DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */,
+				DA7D8DD21A18EF6E002B5A5E /* MoreCollections.h */,
 				DA7D8DD01A18EF6E002B5A5E /* Supporting Files */,
 			);
-			path = MoreCollections;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		DA7D8DD01A18EF6E002B5A5E /* Supporting Files */ = {
@@ -113,16 +115,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DA7D8DDC1A18EF6E002B5A5E /* MoreCollectionsTests */ = {
+		DA7D8DDC1A18EF6E002B5A5E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DA2EEEC01A705E73006D8EC9 /* SetPerfTest.swift */,
 				DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */,
 				DABABFC31A1FF83E00D13603 /* TreeTests.swift */,
 				DA6B85D81A1E7CE200D14506 /* SetTests.swift */,
 				DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */,
 				DA7D8DDD1A18EF6E002B5A5E /* Supporting Files */,
 			);
-			path = MoreCollectionsTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		DA7D8DDD1A18EF6E002B5A5E /* Supporting Files */ = {
@@ -257,6 +260,7 @@
 				DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */,
 				DADC93471A1BB13A005F82DF /* Set.swift in Sources */,
 				DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */,
+				DA2EEEC11A705E73006D8EC9 /* SetPerfTest.swift in Sources */,
 				DA1AEF581A5D8B9900C3D114 /* TreeTraversal.swift in Sources */,
 				DADAAA831A5785C000C0D2EF /* TreeTraversalTests.swift in Sources */,
 			);
@@ -366,7 +370,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MoreCollections/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,7 +387,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MoreCollections/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,7 +406,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MoreCollectionsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -415,7 +419,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = MoreCollectionsTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
