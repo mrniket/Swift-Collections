@@ -77,7 +77,7 @@ public struct Tree<N:Hashable> {
     }
 
     public func isDisjoined(node: N) -> Bool {
-        return isEmpty() || !contains(self.allNodes, node) || !contains(getTreePath(node), root!)
+        return isEmpty() || !allNodes.contains(node) || !contains(getTreePath(node), root!)
     }
 
     public func getParent(node: N) -> N? {
@@ -86,14 +86,13 @@ public struct Tree<N:Hashable> {
 
     public func getTreePath(node: N) -> [N] {
         var path = [N]()
-        if (contains(self.allNodes, node)) {
+        if (allNodes.contains(node)) {
             path += [node]
             var possibleParent = getParent(node)
             while (possibleParent != nil) {
                 path += [possibleParent!]
                 possibleParent = getParent(possibleParent!)
             }
-
         }
         return path.reverse()
     }
