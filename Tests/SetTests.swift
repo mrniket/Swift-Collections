@@ -158,13 +158,6 @@ class SetTests: XCTestCase {
         }
     }
 
-    func testAsArray() {
-        XCTAssertTrue(set.asArray().isEmpty)
-        XCTAssertEqual([Int](), set.asArray())
-        set.add(1)
-        XCTAssertEqual([1], set.asArray())
-    }
-
     func testEquals() {
         var other = Set<Int>()
         XCTAssertTrue(set.equals(other))

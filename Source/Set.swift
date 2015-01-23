@@ -81,10 +81,6 @@ public struct Set<T:Hashable> {
     public func reduce<U>(initial: U, combine: (U, T) -> U) -> U {
         return Swift.reduce(dictionary.keys, initial, combine)
     }
-
-    public func asArray() -> [T] {
-        return [T](dictionary.keys)
-    }
 }
 
 extension Set: SequenceType {
