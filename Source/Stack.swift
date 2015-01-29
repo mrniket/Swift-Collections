@@ -7,7 +7,7 @@
 import Foundation
 
 public struct Stack<T:Equatable> {
-    var array: [T] = []
+    private var array: [T] = []
     
     public init<S:SequenceType where S.Generator.Element == T>(_ sequence: S) {
         pushAll(sequence)
@@ -62,8 +62,6 @@ extension Stack: ArrayLiteralConvertible {
         pushAll(elements)
     }
 }
-
-
 
 extension Stack: Equatable {
     public func equals(other: Stack<T>) -> Bool {
