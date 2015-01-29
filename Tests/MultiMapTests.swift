@@ -16,7 +16,7 @@ class MultimapTests: XCTestCase {
     }
 
     func testInitialState() {
-        XCTAssertTrue(multimap.isEmpty(), "MultiMap must start as empty")
+        XCTAssertTrue(multimap.isEmpty, "MultiMap must start as empty")
     }
 
     func testInitWithSequence() {
@@ -58,9 +58,9 @@ class MultimapTests: XCTestCase {
 
     func testRemoveAll() {
         multimap.put(1, value: 2);
-        XCTAssertFalse(multimap.isEmpty())
+        XCTAssertFalse(multimap.isEmpty)
         multimap.removeAll()
-        XCTAssertTrue(multimap.isEmpty())
+        XCTAssertTrue(multimap.isEmpty)
     }
 
     func testContainsEntry() {
@@ -107,7 +107,7 @@ class MultimapTests: XCTestCase {
         XCTAssertEqual(multimap.values.count, multimap.count)
 
         multimap.removeAll()
-        XCTAssertTrue(multimap.isEmpty())
+        XCTAssertTrue(multimap.isEmpty)
         multimap.put(14, value: 14)
         XCTAssertEqual(multimap.values.count, 1)
         XCTAssertEqual(multimap.values.count, multimap.count)

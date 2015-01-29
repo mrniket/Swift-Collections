@@ -31,12 +31,12 @@ class TreeTests: XCTestCase {
 
     func testClearAndSize() {
         XCTAssertEqual(6, tree.count)
-        XCTAssertFalse(tree.isEmpty())
+        XCTAssertFalse(tree.isEmpty)
         tree.removeAll()
         XCTAssertEqual(0, tree.count)
-        XCTAssertTrue(tree.isEmpty())
+        XCTAssertTrue(tree.isEmpty)
 
-        XCTAssertTrue(Tree<String>().isEmpty())
+        XCTAssertTrue(Tree<String>().isEmpty)
     }
 
     func testGetParent() {

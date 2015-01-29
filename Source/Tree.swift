@@ -18,6 +18,10 @@ public struct Tree<N:Hashable> {
     public var count: Int {
         return allNodes.count
     }
+    
+    public var isEmpty: Bool {
+        return self.count == 0
+    }
 
     public var root: N? {
         if let node = firstNode {
@@ -77,7 +81,7 @@ public struct Tree<N:Hashable> {
     }
 
     public func isDisjoined(node: N) -> Bool {
-        return isEmpty() || !allNodes.contains(node) || !contains(getTreePath(node), root!)
+        return isEmpty || !allNodes.contains(node) || !contains(getTreePath(node), root!)
     }
 
     public func getParent(node: N) -> N? {
@@ -99,9 +103,5 @@ public struct Tree<N:Hashable> {
 
     public func getChildren(node: N) -> [N] {
         return childrenMap.get(node)
-    }
-
-    public func isEmpty() -> Bool {
-        return self.count == 0
     }
 }
