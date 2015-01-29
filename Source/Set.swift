@@ -23,6 +23,10 @@ public struct Set<T:Hashable> {
     public var count: Int {
         return dictionary.count
     }
+    
+    public var isEmpty : Bool {
+        return dictionary.isEmpty
+    }
 
     public mutating func add(item: T) -> Bool {
         let isNew = !contains(item)
@@ -64,10 +68,6 @@ public struct Set<T:Hashable> {
             }
         }
         return true
-    }
-
-    public func isEmpty() -> Bool {
-        return dictionary.isEmpty
     }
 
     public func filter(includeElement: (T) -> Bool) -> Set<T> {

@@ -46,7 +46,7 @@ public struct Tree<N:Hashable> {
         parentMap[node] = nil
         allNodes.remove(node)
 
-        if (allNodes.isEmpty()) {
+        if (allNodes.isEmpty) {
             firstNode = nil
             removeAll()
         }

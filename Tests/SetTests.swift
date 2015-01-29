@@ -17,11 +17,11 @@ class SetTests: XCTestCase {
     }
 
     func testInitialState() {
-        XCTAssertTrue(set.isEmpty(), "Set must start as empty")
+        XCTAssertTrue(set.isEmpty, "Set must start as empty")
     }
 
     func testIsInit() {
-        XCTAssertTrue(Set<Int>().isEmpty())
+        XCTAssertTrue(Set<Int>().isEmpty)
         XCTAssertEqual(4, Set([1, 2, 3, 4, 4]).count)
         XCTAssertEqual(4, Set("abcdd").count)
 
@@ -37,26 +37,26 @@ class SetTests: XCTestCase {
         XCTAssertFalse(contains(temp, 100))
 
         temp = []
-        XCTAssertTrue(temp.isEmpty())
+        XCTAssertTrue(temp.isEmpty)
     }
 
     func testIsEmpty() {
         XCTAssertEqual(0, set.count)
-        XCTAssertTrue(set.isEmpty())
+        XCTAssertTrue(set.isEmpty)
         set.add(100)
         XCTAssertEqual(1, set.count)
-        XCTAssertFalse(set.isEmpty())
+        XCTAssertFalse(set.isEmpty)
         set.add(101)
         XCTAssertEqual(2, set.count)
-        XCTAssertFalse(set.isEmpty())
+        XCTAssertFalse(set.isEmpty)
     }
 
     func testCount() {
         XCTAssertEqual(0, set.count)
-        XCTAssertTrue(set.isEmpty())
+        XCTAssertTrue(set.isEmpty)
         set.add(100)
         XCTAssertEqual(1, set.count)
-        XCTAssertFalse(set.isEmpty())
+        XCTAssertFalse(set.isEmpty)
         set.add(101)
         XCTAssertEqual(2, set.count)
         set.removeAll()
@@ -103,9 +103,9 @@ class SetTests: XCTestCase {
 
     func testRemoveAll() {
         set.addAll([1, 2, 3, 4, 5])
-        XCTAssertFalse(set.isEmpty())
+        XCTAssertFalse(set.isEmpty)
         set.removeAll()
-        XCTAssertTrue(set.isEmpty())
+        XCTAssertTrue(set.isEmpty)
     }
     
     func testContains() {
