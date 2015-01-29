@@ -10,7 +10,7 @@ import Foundation
 public struct Multimap<K:Hashable, V:Equatable> {
     typealias Values = [V]
     typealias Entry = (key:K, value:V)
-    var map: [K:Values] = [:]
+    private var map: [K:Values] = [:]
 
     public init<S:SequenceType where S.Generator.Element == Entry>(_ sequence: S) {
         putAll(sequence)
@@ -20,7 +20,7 @@ public struct Multimap<K:Hashable, V:Equatable> {
     }
 
     // Returns the number of key-value pairs in this Multimap.
-    var count: Int {
+    public var count: Int {
         var size = 0
         for key in map.keys {
             size += map[key]!.count
@@ -29,31 +29,36 @@ public struct Multimap<K:Hashable, V:Equatable> {
     }
 
     // Returns a new array containing the key from each key-value pair in this Multimap
-    var keys: [K] {
+    public var keys: [K] {
         return [K](map.keys)
     }
 
     // Returns a new array containing the value from each key-value pair contained in this Multimap, without collapsing duplicates (so values.count == self.count).  Order is not deterministic
-    var values: [V] {
+    public var values: [V] {
         var allValues = [V]()
         for (key, value) in self {
             allValues += [value]
         }
         return allValues
     }
+    
+    // Returns true if this Multimap contains no key-value pairs. Equivalent to count == 0 but more efficient when this Multimap is empty
+    public var isEmpty: Bool {
+        return map.count == 0 || self.count == 0;
+    }
 
     // Returns true if this Multimap contains at least one key-value pair with the key key and the value value.
-    func containsEntry(key: K, value: V) -> Bool {
+    public func containsEntry(key: K, value: V) -> Bool {
         return contains(get(key), value)
     }
 
     // Returns true if this Multimap contains at least one key-value pair with the key key.
-    func containsKey(key: K) -> Bool {
+    public func containsKey(key: K) -> Bool {
         return map[key] != nil;
     }
 
     //Returns true if this Multimap contains at least one key-value pair with the value value.
-    func containsValue(value: V) -> Bool {
+    public func containsValue(value: V) -> Bool {
         for key in map.keys {
             if (containsEntry(key, value: value)) {
                 return true
@@ -63,7 +68,7 @@ public struct Multimap<K:Hashable, V:Equatable> {
     }
 
     // Returns a new array of the values associated with key in this Multimap, if any.
-    func get(key: K) -> [V] {
+    public func get(key: K) -> [V] {
         if let values = map[key] {
             return values;
         }
@@ -71,39 +76,34 @@ public struct Multimap<K:Hashable, V:Equatable> {
     }
 
     // Stores a key-value pair in this Multimap.
-    mutating func put(key: K, value: V) {
+    public mutating func put(key: K, value: V) {
         if (!containsKey(key)) {
             map[key] = []
         }
         map[key]!.append(value)
     }
 
-    mutating func putAll<S:SequenceType where S.Generator.Element == Entry>(sequence: S) {
+    public mutating func putAll<S:SequenceType where S.Generator.Element == Entry>(sequence: S) {
         for entry in [Entry](sequence) {
             put(entry.key, value: entry.value)
         }
     }
 
     // Removes all key-value pairs with the key key and the value value from this Multimap, if such exists.
-    mutating func removeValueForKey(key: K, value: V) {
+    public mutating func removeValueForKey(key: K, value: V) {
         map[key] = get(key).filter {
             $0 != value
         }
     }
 
     // Removes all values associated with the key key.
-    mutating func removeValuesForKey(key: K) {
+    public mutating func removeValuesForKey(key: K) {
         map.removeValueForKey(key)
     }
 
     // Removes all key-value pairs from the Multimap, leaving it empty.
-    mutating func removeAll() {
+    public mutating func removeAll() {
         map.removeAll()
-    }
-
-    // Returns true if this Multimap contains no key-value pairs. Equivalent to count == 0 but more efficient when this Multimap is empty
-    func isEmpty() -> Bool {
-        return map.count == 0 || self.count == 0;
     }
 
     public func filter(includeElement: (Entry) -> Bool) -> Multimap<K, V> {
@@ -151,7 +151,6 @@ extension Multimap: Equatable {
             }
         }
         return true
-
     }
 }
 
