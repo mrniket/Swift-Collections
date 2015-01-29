@@ -20,6 +20,10 @@ public struct Stack<T:Equatable> {
         return array.count
     }
     
+    public var isEmpty: Bool {
+        return array.isEmpty
+    }
+    
     public mutating func push(item:T){
         array.append(item)
     }
@@ -40,10 +44,6 @@ public struct Stack<T:Equatable> {
     
     public func peek() -> T?{
         return array.last
-    }
-    
-    public func isEmpty() -> Bool {
-        return array.isEmpty
     }
     
     public mutating func removeAll() {
