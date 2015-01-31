@@ -8,26 +8,49 @@ import XCTest
 
 class StackTests: XCTestCase {
 
+    var stack = Stack<Int>()
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        stack.removeAll()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testInitialState() {
+        XCTAssertTrue(stack.isEmpty, "Stack must start empty")
     }
+    
+    func testInit() {
+        XCTAssertTrue(Stack<Int>().isEmpty)
+        XCTAssertEqual(5, Stack([1, 2, 3, 4, 4]).count)
+        XCTAssertEqual(5, Stack("abcdd").count)
 
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        let temp = Stack(1 ... 10)
+        XCTAssertEqual(10, temp.count)
+        XCTAssertTrue(contains(temp, 5))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testIsEmpty() {
+        XCTAssertTrue(stack.isEmpty)
+        stack.push(100)
+        XCTAssertFalse(stack.isEmpty)
+        stack.push(100)
+        XCTAssertFalse(stack.isEmpty)
+        stack.pop()
+        XCTAssertFalse(stack.isEmpty)
+        stack.pop()
+        XCTAssertTrue(stack.isEmpty)
+    }
+    
+    func testCount() {
+        XCTAssertEqual(0, stack.count)
+        stack.push(100)
+        XCTAssertEqual(1, stack.count)
+        stack.push(100)
+        XCTAssertEqual(2, stack.count)
+        stack.pop()
+        XCTAssertEqual(1, stack.count)
+        stack.pop()
+        XCTAssertEqual(0, stack.count)
     }
 
 }

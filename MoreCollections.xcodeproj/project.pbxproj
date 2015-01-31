@@ -24,6 +24,7 @@
 		DADAAA831A5785C000C0D2EF /* TreeTraversalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */; };
 		DADC93461A1BB13A005F82DF /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC93451A1BB13A005F82DF /* Set.swift */; };
 		DADC93471A1BB13A005F82DF /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC93451A1BB13A005F82DF /* Set.swift */; };
+		DAEAA6F71A7D197800AD8BCE /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87424B1A76F0870023EA88 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +267,7 @@
 				DABABFC41A1FF83E00D13603 /* TreeTests.swift in Sources */,
 				DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */,
 				DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */,
+				DAEAA6F71A7D197800AD8BCE /* Stack.swift in Sources */,
 				DADC93471A1BB13A005F82DF /* Set.swift in Sources */,
 				DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */,
 				DA2EEEC11A705E73006D8EC9 /* SetPerfTest.swift in Sources */,
