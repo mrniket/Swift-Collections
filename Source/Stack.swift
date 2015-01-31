@@ -7,7 +7,7 @@
 import Foundation
 
 public struct Stack<T:Equatable> {
-    private var array: [T] = []
+    private var delegate: [T] = []
     
     public init<S:SequenceType where S.Generator.Element == T>(_ sequence: S) {
         pushAll(sequence)
@@ -17,15 +17,15 @@ public struct Stack<T:Equatable> {
     }
     
     public var count: Int {
-        return array.count
+        return delegate.count
     }
     
     public var isEmpty: Bool {
-        return array.isEmpty
+        return delegate.isEmpty
     }
     
     public mutating func push(item:T){
-        array.append(item)
+        delegate.append(item)
     }
     
     public mutating func pushAll<S:SequenceType where S.Generator.Element == T>(sequence: S) {
@@ -35,25 +35,25 @@ public struct Stack<T:Equatable> {
     }
     
     public mutating func pop() -> T? {
-        var last = array.last
+        var last = delegate.last
         if last != nil {
-            array.removeLast()
+            delegate.removeLast()
         }
         return last
     }
     
     public func peek() -> T?{
-        return array.last
+        return delegate.last
     }
     
     public mutating func removeAll() {
-        array.removeAll()
+        delegate.removeAll()
     }
 }
 
 extension Stack: SequenceType {
     public func generate() -> GeneratorOf<T> {
-        return GeneratorOf(array.generate())
+        return GeneratorOf(delegate.generate())
     }
 }
 
@@ -65,7 +65,7 @@ extension Stack: ArrayLiteralConvertible {
 
 extension Stack: Equatable {
     public func equals(other: Stack<T>) -> Bool {
-        return self.array == other.array
+        return self.delegate == other.delegate
     }
 }
 
