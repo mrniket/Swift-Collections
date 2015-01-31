@@ -157,6 +157,25 @@ class SetTests: XCTestCase {
             XCTAssertTrue(contains(set, item))
         }
     }
+    
+    func testUnion() {
+        set.addAll(0...5)
+        XCTAssertEqual(set.union(Set(4...10)), Set(4...5))
+        XCTAssertEqual(set.union(Set(6...10)), Set())
+        XCTAssertEqual(set.union(Set()), Set())
+        XCTAssertEqual(set.union(Set(0...2)), Set(0...2))
+    }
+    
+    func testIntersect() {
+        set.addAll(0...5)
+        let result = set.intersect(Set(4...10))
+        XCTAssertEqual(set.intersect(Set(4...10)), Set(0...10))
+        XCTAssertEqual(set.intersect(Set(6...10)), Set(0...10))
+        
+        XCTAssertEqual(Set<Int>().intersect(Set<Int>()), Set<Int>())
+        XCTAssertEqual(set.intersect(Set()), Set(0...5))
+        XCTAssertEqual(set.intersect(Set(0...2)), Set(0...5))
+    }
 
     func testEquals() {
         var other = Set<Int>()

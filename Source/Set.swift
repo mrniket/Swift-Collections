@@ -69,6 +69,23 @@ public struct Set<T:Hashable> {
         }
         return true
     }
+    
+    public func intersect(other: Set<T>) -> Set<T> {
+        var intersection = Set<T>()
+        intersection.addAll(self)
+        intersection.addAll(other)
+        return intersection
+    }
+    
+    public func union(other: Set<T>) -> Set<T> {
+        var union = Set<T>()
+        for item in other {
+            if self.contains(item){
+                union.add(item)
+            }
+        }
+        return union
+    }
 
     public func filter(includeElement: (T) -> Bool) -> Set<T> {
         return Set<T>(dictionary.keys.filter(includeElement))
