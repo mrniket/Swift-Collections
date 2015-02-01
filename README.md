@@ -1,11 +1,10 @@
+[![Build Status](https://travis-ci.org/jbulat/Swift-Collections.svg?branch=master)](https://travis-ci.org/jbulat/Swift-Collections)
 More Collections for Swift
 =============
 
 More Collections for Swift introduces a few useful native collection types not currently in Swift. These collections are designed to coexist with the Swift framework.
 
 As a general rule, the API follow Swift's Array and Dictionary API while strongly influence by [Google's Guava collections](https://code.google.com/p/guava-libraries/wiki/GuavaExplained).   More Collections for Swift are designed to be as simple as possible while still satisfying a majority of each collection’s use cases.
-
-[![Build Status](https://travis-ci.org/jbulat/Swift-Collections.svg?branch=master)](https://travis-ci.org/jbulat/Swift-Collections)
 
 ## Collections
 
