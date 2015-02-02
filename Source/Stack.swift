@@ -49,6 +49,18 @@ public struct Stack<T:Equatable> {
     public mutating func removeAll() {
         delegate.removeAll()
     }
+    
+    public func filter(includeElement: (T) -> Bool) -> Stack<T> {
+        return Stack<T>(delegate.filter(includeElement))
+    }
+    
+    public func map<U>(transform: (T) -> U) -> Stack<U> {
+        return Stack<U>(delegate.map(transform))
+    }
+    
+    public func reduce<U>(initial: U, combine: (U, T) -> U) -> U {
+        return Swift.reduce(delegate, initial, combine)
+    }
 }
 
 extension Stack: SequenceType {
