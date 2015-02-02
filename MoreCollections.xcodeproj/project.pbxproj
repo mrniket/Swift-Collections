@@ -15,6 +15,8 @@
 		DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */; };
 		DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */; };
 		DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */; };
+		DA87424C1A76F0870023EA88 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87424B1A76F0870023EA88 /* Stack.swift */; };
+		DA87424E1A76F4600023EA88 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87424D1A76F4600023EA88 /* StackTests.swift */; };
 		DAA7FDFA1A190E83002952AC /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDF91A190E83002952AC /* Tree.swift */; };
 		DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA7FDF91A190E83002952AC /* Tree.swift */; };
 		DABABFC41A1FF83E00D13603 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABABFC31A1FF83E00D13603 /* TreeTests.swift */; };
@@ -22,6 +24,7 @@
 		DADAAA831A5785C000C0D2EF /* TreeTraversalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */; };
 		DADC93461A1BB13A005F82DF /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC93451A1BB13A005F82DF /* Set.swift */; };
 		DADC93471A1BB13A005F82DF /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADC93451A1BB13A005F82DF /* Set.swift */; };
+		DAEAA6F71A7D197800AD8BCE /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA87424B1A76F0870023EA88 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,8 @@
 		DA7D8DEF1A18EF8E002B5A5E /* MultiMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiMapTests.swift; sourceTree = "<group>"; };
 		DA7D8DF21A18F069002B5A5E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DA7D8DF31A18F0D1002B5A5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DA87424B1A76F0870023EA88 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		DA87424D1A76F4600023EA88 /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		DAA7FDF91A190E83002952AC /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		DABABFC31A1FF83E00D13603 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTests.swift; sourceTree = "<group>"; };
 		DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeTraversal.swift; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DADC93451A1BB13A005F82DF /* Set.swift */,
+				DA87424B1A76F0870023EA88 /* Stack.swift */,
 				DAA7FDF91A190E83002952AC /* Tree.swift */,
 				DA7D8DE91A18EF82002B5A5E /* MultiMap.swift */,
 				DAC6D1CD1A4C94E5002F36F2 /* TreeTraversal.swift */,
@@ -118,6 +124,7 @@
 		DA7D8DDC1A18EF6E002B5A5E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DA87424D1A76F4600023EA88 /* StackTests.swift */,
 				DA2EEEC01A705E73006D8EC9 /* SetPerfTest.swift */,
 				DADAAA821A5785C000C0D2EF /* TreeTraversalTests.swift */,
 				DABABFC31A1FF83E00D13603 /* TreeTests.swift */,
@@ -244,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DADC93461A1BB13A005F82DF /* Set.swift in Sources */,
+				DA87424C1A76F0870023EA88 /* Stack.swift in Sources */,
 				DAA7FDFA1A190E83002952AC /* Tree.swift in Sources */,
 				DAC6D1CE1A4C94E5002F36F2 /* TreeTraversal.swift in Sources */,
 				DA7D8DEB1A18EF82002B5A5E /* MultiMap.swift in Sources */,
@@ -254,10 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA87424E1A76F4600023EA88 /* StackTests.swift in Sources */,
 				DA6B85D91A1E7CE200D14506 /* SetTests.swift in Sources */,
 				DABABFC41A1FF83E00D13603 /* TreeTests.swift in Sources */,
 				DA7D8DEC1A18EF82002B5A5E /* MultiMap.swift in Sources */,
 				DAA7FDFB1A190E83002952AC /* Tree.swift in Sources */,
+				DAEAA6F71A7D197800AD8BCE /* Stack.swift in Sources */,
 				DADC93471A1BB13A005F82DF /* Set.swift in Sources */,
 				DA7D8DF01A18EF8E002B5A5E /* MultiMapTests.swift in Sources */,
 				DA2EEEC11A705E73006D8EC9 /* SetPerfTest.swift in Sources */,

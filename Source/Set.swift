@@ -10,8 +10,8 @@ import Foundation
 
 public struct Set<T:Hashable> {
 
-    let IGNORED = 0
-    var dictionary: [T:Int] = [:]
+    private let IGNORED = 0
+    private var delegate: [T:Int] = [:]
 
     public init<S:SequenceType where S.Generator.Element == T>(_ sequence: S) {
         addAll(sequence)
@@ -21,7 +21,7 @@ public struct Set<T:Hashable> {
     }
 
     public var count: Int {
-        return dictionary.count
+        return delegate.count
     }
     
     public var isEmpty : Bool {
@@ -30,7 +30,7 @@ public struct Set<T:Hashable> {
 
     public mutating func add(item: T) -> Bool {
         let isNew = !contains(item)
-        dictionary[item] = IGNORED
+        delegate[item] = IGNORED
         return isNew
     }
 
@@ -42,7 +42,7 @@ public struct Set<T:Hashable> {
 
     public mutating func remove(item: T) -> Bool {
         let exists = contains(item)
-        dictionary[item] = nil
+        delegate[item] = nil
         return exists
     }
 
@@ -53,12 +53,12 @@ public struct Set<T:Hashable> {
     }
 
     public mutating func removeAll() {
-        dictionary.removeAll()
+        delegate.removeAll()
     }
     
     // Returns true if this set contains parameter item.  Alg complexity is is O(1), Swift.contains() is is O(n)
     public func contains(item : T) -> Bool {
-        return dictionary[item] != nil
+        return delegate[item] != nil
     }
 
     public func containsAll<S:SequenceType where S.Generator.Element == T>(sequence: S) -> Bool {
@@ -88,21 +88,21 @@ public struct Set<T:Hashable> {
     }
 
     public func filter(includeElement: (T) -> Bool) -> Set<T> {
-        return Set<T>(dictionary.keys.filter(includeElement))
+        return Set<T>(delegate.keys.filter(includeElement))
     }
 
     public func map<U>(transform: (T) -> U) -> Set<U> {
-        return Set<U>(dictionary.keys.map(transform))
+        return Set<U>(delegate.keys.map(transform))
     }
 
     public func reduce<U>(initial: U, combine: (U, T) -> U) -> U {
-        return Swift.reduce(dictionary.keys, initial, combine)
+        return Swift.reduce(delegate.keys, initial, combine)
     }
 }
 
 extension Set: SequenceType {
     public func generate() -> GeneratorOf<T> {
-        return GeneratorOf(dictionary.keys.generate())
+        return GeneratorOf(delegate.keys.generate())
     }
 }
 
