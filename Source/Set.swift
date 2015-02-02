@@ -9,9 +9,8 @@ import Foundation
 // A collection that contains no duplicate elements.  More formally, sets contain no pair of elements e1 and e2 such that e1 == e2
 
 public struct Set<T:Hashable> {
-
-    private let IGNORED = 0
-    private var delegate: [T:Int] = [:]
+    typealias IGNORED = Int
+    private var delegate: [T:IGNORED] = [:]
 
     public init<S:SequenceType where S.Generator.Element == T>(_ sequence: S) {
         addAll(sequence)
@@ -30,7 +29,7 @@ public struct Set<T:Hashable> {
 
     public mutating func add(item: T) -> Bool {
         let isNew = !contains(item)
-        delegate[item] = IGNORED
+        delegate[item] = 0
         return isNew
     }
 
