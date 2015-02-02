@@ -25,7 +25,7 @@ public struct Set<T:Hashable> {
     }
     
     public var isEmpty : Bool {
-        return dictionary.isEmpty
+        return delegate.isEmpty
     }
 
     public mutating func add(item: T) -> Bool {
