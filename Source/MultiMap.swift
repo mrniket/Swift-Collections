@@ -29,8 +29,8 @@ public struct Multimap<K:Hashable, V:Equatable> {
     }
 
     // Returns a new array containing the key from each key-value pair in this Multimap
-    public var keys: [K] {
-        return [K](map.keys)
+    public var keys: Set<K> {
+        return Set(map.keys)
     }
 
     // Returns a new array containing the value from each key-value pair contained in this Multimap, without collapsing duplicates (so values.count == self.count).  Order is not deterministic
