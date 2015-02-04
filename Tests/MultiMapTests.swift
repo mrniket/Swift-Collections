@@ -93,7 +93,7 @@ class MultimapTests: XCTestCase {
     func testGetAllKeys() {
         XCTAssertTrue(multimap.keys.isEmpty)
         multimap.put(1, value: 2)
-        XCTAssertEqual(multimap.keys, [1])
+        XCTAssertEqual(multimap.keys, Set([1]))
         multimap.put(12, value: 4)
         XCTAssertEqual(multimap.keys.count, 2)
     }
