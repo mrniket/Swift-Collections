@@ -21,11 +21,7 @@ public struct Multimap<K:Hashable, V:Equatable> {
 
     // Returns the number of key-value pairs in this Multimap.
     public var count: Int {
-        var size = 0
-        for key in map.keys {
-            size += map[key]!.count
-        }
-        return size
+        return [Entry](self).count
     }
 
     // Returns a new array containing the key from each key-value pair in this Multimap
