@@ -35,11 +35,7 @@ public struct Stack<T:Equatable> {
     }
     
     public mutating func pop() -> T? {
-        var last = delegate.last
-        if last != nil {
-            delegate.removeLast()
-        }
-        return last
+        return delegate.isEmpty ? nil : delegate.removeLast()
     }
     
     public func peek() -> T?{
