@@ -4,7 +4,6 @@
 //
 //  Copyright (c) 2015 Swift-Collections project (https://github.com/jbulat/Swift-Collections)
 //
-#import <UIKit/UIKit.h>
 
 //! Project version number for MoreCollections.
 FOUNDATION_EXPORT double MoreCollectionsVersionNumber;
